@@ -1,0 +1,75 @@
+.mobile 
+	min-height: 864px
+	padding: 48px 0 80px 0
+	background-color: #1eacc7
+	&__subtitle 
+		font-size: 17px
+		font-weight: normal
+		line-height: 1
+		text-align: center
+		color: #222222
+		margin-bottom: 11px
+		margin-top: 4px
+	&__item
+		position: relative
+		width: 320px
+		min-height: 280px
+		margin-top: 19px
+		padding: 88px 26px 0 26px
+		&_1
+			background: url('../img/photo/mobile_screen1.jpg') center center/cover no-repeat
+		&_2
+			background: url('../img/photo/mobile_screen2.jpg') center center/cover no-repeat
+		&_3
+			background: url('../img/photo/mobile_screen3.jpg') center center/cover no-repeat
+		&_4
+			background: url('../img/photo/mobile_screen4.jpg') center center/cover no-repeat
+		&_5
+			background: url('../img/photo/mobile_screen5.jpg') center center/cover no-repeat
+		&_6
+			background: url('../img/photo/mobile_screen6.jpg') center center/cover no-repeat
+		&_title 
+			font-size: 24px
+			font-weight: normal
+			line-height: 1.29
+			text-align: center
+			color: #ffffff
+			text-transform: uppercase
+		&_wrap:hover &_circle::before
+			transition: 0.3s all
+			background-color: red
+		&_wrap:hover &_circle::after
+			transition: 0.3s all
+			background-color: red
+		&_circle
+			position: absolute
+			bottom: 35px
+			left: 50%
+			transform: translateX(-50%)
+			display: flex
+			justify-content: center
+			align-items: center
+			width: 26px
+			height: 26px
+			background-color: #000000
+			border-radius: 50%
+			cursor: pointer
+			
+			&::before, &::after
+				content: ''
+				display: block
+				width: 2px
+				height: 14px
+				background-color: #1eacc7
+			&::after
+				transform: rotate(90deg)
+			&::before
+				position: absolute
+				left: 50%
+				transform: translateX(-50%)
+			&:hover &::after
+				background-color: red
+
+		
+				
+
