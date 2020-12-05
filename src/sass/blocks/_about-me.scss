@@ -1,0 +1,65 @@
+.about-me {
+    padding: 120px 0;
+    &__wrapper {
+        display: grid;
+        grid-template-columns: minmax(100px, 400px) minmax(100px, 570px);
+        grid-template-rows: minmax(100px, auto) minmax(100px, auto);
+        column-gap: 70px;
+        row-gap: 40px;
+    }
+    &__photo {
+        grid-row: 1 / 3;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &__subtitle {
+        position: relative;
+        padding-left: 12px;
+        @include before_circle;
+    }
+    hr {
+        width: 60px;
+        height: 3px;
+        background-color: $main-color;
+        border: none; 
+    }
+    &__descr {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 21px;
+        color: #000000;
+        margin-top: 20px;
+    }
+    &__skills {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 20px  50px;
+    }
+    &-item {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        &__icon {
+            padding: 15px 0 0 15px;
+            @include before_circle;
+            &:before {
+                top: 0;
+            }
+        }
+        &__descr {
+            font-weight: 500;
+            font-size: 12px;
+            line-height: 18px;
+            color: #000000;
+        }
+        &__text {
+            padding-left: 15px;
+            max-width: 200px;
+        }
+    }
+}

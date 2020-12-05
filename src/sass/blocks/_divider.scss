@@ -1,0 +1,10 @@
+.divider {
+    width: 60px;
+    height: 3px;
+    background-color: $main-color;
+    margin: 0 auto; 
+    margin-top: 25px;
+    &__contacts {
+        margin: 0;
+    }
+}
