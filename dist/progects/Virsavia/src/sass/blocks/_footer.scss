@@ -1,0 +1,47 @@
+.footer {
+    min-height: 360px;
+    padding: 54px 0 56px 0;
+    background: var(--main-color);
+    &__wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__logo {
+        font-family: var(--font3);
+        font-weight: 700;
+        font-size: 32px;
+        color: #fff;
+    }
+
+    &__menu {
+        padding: 0 125px 0 100px;
+        list-style-type: none;
+        margin: 0;
+    }
+
+    &__item {
+        a {
+            display: block;
+            font-weight: 400;
+            font-size: 24px;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+            &:hover {
+                text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.6);
+                transform: scale(1.05);
+            }
+        }
+    }
+
+    &__map {
+        iframe {
+            border: 0;
+            border-radius: 8px;
+            width: 595px;
+            height: 252px;
+        }
+    }
+}

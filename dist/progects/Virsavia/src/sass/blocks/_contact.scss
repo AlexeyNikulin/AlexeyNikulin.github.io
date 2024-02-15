@@ -1,0 +1,116 @@
+.contact {
+    padding-bottom: 190px;
+
+    &__wrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 125px 150px 30px 0;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 133%;
+        color: #000;
+        text-align: left;
+    }
+
+    &__address {
+        margin-bottom: 50px;
+    }
+
+    &__phone {
+        margin-bottom: 50px;
+        a {
+            font-weight: 400;
+            font-size: 30px;
+            line-height: 133%;
+            color: #000;
+            text-align: left;
+            text-decoration: none;
+        }
+    }
+
+    &__email {
+        margin-bottom: 50px;
+    }
+
+    &__schedule {
+        margin-bottom: 50px;
+    }
+
+    &__links {
+        display: flex;
+        a {
+            display: block;
+            margin-right: 18px;
+            img {
+                display: block;
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+
+    &-form {
+        border-radius: 8px;
+        width: 540px;
+        min-height: 720px;
+        padding: 66px 62px;
+        background: url("../img/form/form.jpg") center center / cover no-repeat;
+        &__title {
+            font-weight: 400;
+            font-size: 30px;
+            color: #fff;
+            text-align: center;
+        }
+        input {
+            border-radius: 10px;
+            width: 412px;
+            height: 56px;
+            font-weight: 400;
+            font-size: 26px;
+            color: rgba(0, 0, 0, 0.47);
+            border: none;
+            outline: none;
+            margin-top: 32px;
+            padding-left: 30px;
+            &:first-child {
+                margin-top: 36px;
+            }
+            &::placeholder {
+                color: rgba(0, 0, 0, 0.47);
+            }
+        }
+        textarea {
+            border-radius: 10px;
+            width: 412px;
+            height: 242px;
+            margin-top: 32px;
+            padding: 14px 0 0 30px;
+            font-weight: 400;
+            font-size: 26px;
+            color: rgba(0, 0, 0, 0.47);
+            border: none;
+            outline: none;
+            resize: none;
+            &::placeholder {
+                color: rgba(0, 0, 0, 0.47);
+            }
+        }
+    }
+
+
+    &__btn {
+        border-radius: 8px;
+        width: 238px;
+        height: 56px;
+        background: var(--btn-color);
+        margin: 0 auto;
+        margin-top: 30px;
+    }
+}

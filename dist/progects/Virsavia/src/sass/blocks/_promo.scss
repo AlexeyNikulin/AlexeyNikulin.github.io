@@ -1,0 +1,83 @@
+.promo {
+    position: relative;
+    padding: 32px 0 100px 0;
+    min-height: 100vh;
+    background: url("../img/promo/main_bg.jpg") center center / cover no-repeat;
+    z-index: 1;
+    &:before{
+        content: '';
+        position: absolute; top: 0; left: 0;
+        width: 50%;
+        height: 100%;
+        backdrop-filter: blur(32px);
+        background: rgba(53, 53, 53, 0.24);
+        z-index: -1;
+    }
+    .header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 64px;
+        &__logo {
+            font-family: var(--font3);
+            font-weight: 700;
+            font-size: 32px;
+            color: var(--logo-color);
+            margin-bottom: 6px;
+        }
+    
+        &__menu {
+            width: 980px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            margin-left: 66px;
+        }
+    
+        &__item {
+            text-align: center;
+            a {
+                display: block;
+                font-weight: 400;
+                font-size: 24px;
+                color: #fff;
+                text-decoration: none;
+                line-height: 24px;
+                transition: all 0.3s ease-in-out;
+                &:hover {
+                    text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.6);
+                    transform: scale(1.05);
+                }
+            }
+            &_mb {
+                margin-bottom: -20px;
+            }
+        }
+    }
+    &__title {
+        margin-top: 160px;
+        font-family: var(--third-family);
+        font-weight: 400;
+        font-size: 70px;
+        color: #fff;
+    }
+
+    &__subtitle {
+        font-weight: 400;
+        font-size: 30px;
+        color: #fff;
+    }
+
+    &__btns {
+        display: flex;
+        margin-top: 60px;
+    }
+
+    &__btn {
+        margin-right: 20px;
+    }
+
+}

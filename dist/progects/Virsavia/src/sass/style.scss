@@ -1,0 +1,21 @@
+@import 'base/variables';
+* {
+    font-family: 'Gilroy', sans-serif;
+    box-sizing: border-box;
+}
+.container {
+    max-width: 1196px;
+    margin: 0 auto;
+}
+
+@import "blocks/buttons";
+@import "blocks/title";
+
+@import "blocks/promo";
+@import "blocks/about";
+@import "blocks/work";
+@import "blocks/matirials";
+@import "blocks/slider";
+@import "blocks/our";
+@import "blocks/contact";
+@import "blocks/footer";

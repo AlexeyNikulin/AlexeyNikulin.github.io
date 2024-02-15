@@ -1,0 +1,46 @@
+.materials {
+    padding: 0 0 150px 0;
+    &__title {
+    }
+
+    &__tabs {
+        width: 945px;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        margin-top: 90px;
+    }
+
+    &__tab {
+        position: relative;
+        width: 337px;
+        height: 52px;
+        font-weight: 400;
+        font-size: 30px;
+        line-height: 30px;
+        color: #000;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.4s ease-in-out;
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background-color: #000;
+            width: 0;
+            height: 2px;
+            transition: all 0.4s ease-in-out;
+        }
+        &:hover {
+            &::before {
+                width: 100%;
+            }
+        }
+        &_active {
+            &::before {
+                width: 100%;
+            }
+        }
+    }
+}
