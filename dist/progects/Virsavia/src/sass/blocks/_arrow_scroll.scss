@@ -1,0 +1,9 @@
+.arrow_scroll {
+    position: fixed;
+    right: 56px;
+    bottom: 200px;
+    cursor: pointer;
+    display: block;
+    transition: all 1s ease-in-out;
+    opacity: 0;
+}

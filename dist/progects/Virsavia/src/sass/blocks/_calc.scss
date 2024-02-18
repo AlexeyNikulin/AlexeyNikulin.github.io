@@ -1,0 +1,193 @@
+.calc {
+    padding: 0 0 150px 0;
+
+    &__wrapper {
+        display: flex;
+        // justify-content: space-between;
+        margin-top: 50px;
+    }
+
+    &__count {
+        padding-left: 40px;
+        width: 65%;
+    }
+
+    &-complete {
+        &__wrapper {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        &__params {
+            font-weight: 400;
+            font-size: 26px;
+            color: #000;
+        }
+    
+        &__item {
+            text-align: center;
+            img {
+                width: 220px;
+                height: 160px;
+                object-fit: cover;
+                cursor: pointer;
+            }
+            &_active {
+                img {
+                    box-shadow: 0 0 0 4px var(--main-color);
+                }
+            }
+        }
+
+        &__text {
+            margin-top: 15px;
+            font-weight: 400;
+            font-size: 16px;
+            color: #000;
+        }
+    }
+
+    &-color {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+        input {
+            position: relative;
+            display: block;
+            margin-top: 15px;
+            border-radius: 3px;
+            width: 250px;
+            height: 30px;
+            background: none;
+            color: black;
+            font-size: 18px;
+            border: none;
+            border-radius: 0;
+            font-weight: 400;
+            font-size: 18px;
+            color: #000;
+            border-bottom: 2px solid mix(white, #424242, 70%);
+            &:focus {
+                outline: none;
+            }
+            &:focus ~ .bar:before {
+                width: 100%;
+            }
+        }
+        .bar {
+            position: relative;
+            display: block;
+            width: 250px;
+            &:before {
+                content: '';
+                height: 2px;
+                width: 0;
+                bottom: 0;
+                position: absolute;
+                background: var(--main-color);
+                transition: 0.4s ease all;
+                left: 0;
+            }
+        }
+
+        &__params {
+            margin-top: 30px;
+        }
+
+    }
+
+    &-additionally {
+        width: 40%;
+        padding: 0 0 0 40px;
+        &__wrapper {
+            margin-top: 20px;
+        }
+
+        &__item {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+    
+        &__title {
+            width: 250px;
+        }
+    
+        &__count {
+            display: flex;
+            span {
+                display: block;
+                font-weight: 400;
+                font-size: 20px;
+                color: #000;
+            }
+        }
+    
+        &__btn {
+            position: relative;
+            width: 30px;
+            height: 30px;
+            background: var(--btn-color);
+            border: none;
+            border-radius: 8px;
+            font-weight: 400;
+            font-size: 20px;
+            color: #fff;
+            outline: none;
+            &:active {
+                top: 2px;
+            }   
+            &:focus {
+                outline: none;
+            }
+            &:hover {
+                background: #c59f76;
+            }
+            &_plus {
+                margin: 0 15px;
+            }
+    
+            &_minus {
+            }
+        }
+    }
+
+    &-payment {
+        width: 62%;
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        margin-top: 60px;
+
+        &__parameters {
+            span {
+                color: var(--btn-color);
+            }
+        }
+        &__complete {
+        }
+    
+        &__color {
+            margin: 10px 0;
+        }
+    
+        &__footer {
+        }
+    
+        &__price {
+
+        }
+    
+        &__btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+            border-radius: 8px;
+            width: 200px;
+            height: 40px;
+        }
+    }
+}

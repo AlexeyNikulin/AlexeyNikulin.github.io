@@ -4,4 +4,14 @@
     font-size: 68px;
     color: var(--main-color);
     line-height: 1;
+    &_params {
+        font-weight: 400;
+        font-size: 26px;
+        color: #000;
+    }
+    &_subtitle {
+        font-weight: 400;
+        font-size: 20px;
+        color: #000;
+    }
 }
