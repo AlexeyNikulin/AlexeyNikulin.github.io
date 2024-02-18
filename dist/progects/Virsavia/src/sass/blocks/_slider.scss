@@ -19,7 +19,12 @@
         cursor: pointer;
         top: 142px;
         left: -40px;
-        transform: translateY(-50%)
+        transform: translateY(-50%);
+        border: none;
+        background: none;
+        &:focus {
+            outline: none;
+        }
     }
 
     &__next {
@@ -33,18 +38,24 @@
         cursor: pointer;
         top: 142px;
         right: -40px;
-        transform: translateY(-50%)
+        transform: translateY(-50%);
+        border: none;
+        background: none;
+        &:focus {
+            outline: none;
+        }
     }
 
     &__inner {
         width: 5172px;
         display: flex;
         align-items: center;
-        transform: translateX(0px);
+        transition: all 0.4s ease-in-out;
     }
 
     &__item {
-        margin-right: 34px;
+        margin-right: 35px;
+        width: 450px;
         img {
             width: 450px;
             height: 285px; 
@@ -55,8 +66,14 @@
     &__descr {
         text-align: center;
         font-weight: 400;
+        padding: 0 10px;
+        width: 100%;
         font-size: 26px;
         color: #000;
         margin-top: 28px;
+    }
+
+    &_furniture {
+        display: none;
     }
 }
