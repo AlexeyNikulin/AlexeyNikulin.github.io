@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Вирсавия - мебель на заказ</title>
+    <title>Сыктывкар мебель</title>
     <link rel="apple-touch-icon" sizes="57x57" href="icons/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="icons/favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="icons/favicon/apple-icon-72x72.png">
@@ -35,8 +35,8 @@
                 <nav>
                     <ul class="header__menu">
                         <li class="header__item"><a href="#about">О нас</a></li>
-                        <li class="header__item"><a href="#our">Наши работы</a></li>
-                        <li class="header__item header__item_mb"><a href="#calc">Рассчиать<br>стоимость</a></li>
+                        <!-- <li class="header__item"><a href="#our">Наши работы</a></li> -->
+                        <li class="header__item"><a href="#calc">Рассчиать стоимость</a></li>
                         <li class="header__item"><a data-modal="consultaion" href="#">Консультация</a></li>
                         <li class="header__item"><a href="#contact">Контакты</a></li>
                         <li class="header__item"><a href="tel:89048610213">+79048610213<br>Пн-Вс 9:00-21:00</a></li>
@@ -53,7 +53,7 @@
         </div>
     </section>
 
-    <section id="our" class="our">
+    <!-- <section id="our" class="our">
         <div class="container">
             <div class="our__title title">Наши работы</div>
             <div class="our__wrapper">
@@ -101,11 +101,11 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <section id="about" class="about">
         <div class="container">
-            <hr>
+            <!-- <hr> -->
             <div class="about__title title">О нас</div>
             <div class="about__descr">
                 Мы рады видеть вас на нашем сайте, здесь представлены примеры наших работ и мебель, которую мы можем изготовить, в том числе по вашим индивидуальным запросам.
@@ -114,7 +114,7 @@
         </div>
     </section>
 
-    <section class="materials">
+    <!-- <section class="materials">
         <div class="container">
             <div class="materials__title title">Современные материалы</div>
             <div class="materials__tabs">
@@ -182,7 +182,7 @@
                 <button class="slider__prev"><img src="icons/slider/prev.svg" alt="arrow_perv"></button>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <section class="work">
         <div class="container">
@@ -247,81 +247,157 @@
                             </div>
                         </div>
                     </div>
-                    <div class="calc-color">
-                        <div class="calc-color__block1">
-                            <div class="calc-color__params title_params">Цвет столешницы</div>
-                            <div class="calc-color__input">
-                                <input name="color-table" type="text" required placeholder="Бирюзовый">
-                                <span class="bar"></span>
-                            </div>
+                </div>
+                <div class="calc-color">
+                    <div class="calc-color__block1">
+                        <div class="calc-color__params title_params">Цвет столешницы</div>
+                        <div class="color_wrapper calc-color__colors">
+                            <div data-title="красный" class="red color calc-color__color"></div>
+                            <div data-title="зеленый" class="green color calc-color__color"></div>
+                            <div data-title="желый" class="yellow color calc-color__color"></div>
+                            <div data-title="серый" class="gray color calc-color__color"></div>
                         </div>
-                        <div class="calc-color__block2">
-                            <div class="calc-color__params title_params">Цвет фасадов</div>
-                            <div class="calc-color__input">
-                                <input name="color-facade" type="text" required placeholder="Серебристый">
-                                <span class="bar"></span>
-                            </div>
+                        
+                        <!-- <div class="calc-color__input">
+                            <input name="color-table" type="text" required placeholder="Бирюзовый">
+                            <span class="bar"></span>
+                        </div> -->
+                    </div>
+                    <div class="calc-color__block2">
+                        <div class="calc-color__params title_params">Цвет фасадов</div>
+                        <div class="color_wrapper calc-color__colors">
+                            <div data-title="красный" class="red color calc-color__color"></div>
+                            <div data-title="зеленый" class="green color calc-color__color"></div>
+                            <div data-title="желый" class="yellow color calc-color__color"></div>
+                            <div data-title="серый" class="gray color calc-color__color"></div>
                         </div>
+                        <!-- <div class="calc-color__input">
+                            <input name="color-facade" type="text" required placeholder="Серебристый">
+                            <span class="bar"></span>
+                        </div> -->
                     </div>
                 </div>
-                <div class="calc-additionally">
-                    <div class="calc-additionally__params title_params">Дополнительно</div>
-                    <div class="calc-additionally__wrapper">
-                        <div data-dop-price="100" class="calc-additionally__item">
-                            <div class="calc-additionally__title title_subtitle">Фасады муф</div>
-                            <div class="calc-additionally__count">
-                                <span>0</span>
-                                <button class="calc-additionally__btn calc-additionally__btn_plus">+</button>
-                                <button class="calc-additionally__btn calc-additionally__btn_minus ">-</button>
-                            </div>
+            </div>
+            <div class="calc-additionally">
+                <div class="calc-additionally__params title_params">Дополнительно</div>
+                <div class="calc-additionally__wrapper">
+                    <div data-dop-price="100" class="calc-additionally__item">
+                        <div class="calc-additionally__imgs">
+                            <img src="img/calc/not-photo.jpg" alt="картинка">
                         </div>
-                        <div data-dop-price="100" class="calc-additionally__item">
-                            <div class="calc-additionally__title title_subtitle">Фартук</div>
-                            <div class="calc-additionally__count">
-                                <span>0</span>
-                                <button class="calc-additionally__btn calc-additionally__btn_plus">+</button>
-                                <button class="calc-additionally__btn calc-additionally__btn_minus">-</button>
-                            </div>
+                        <div class="calc-additionally__title title_subtitle">Фасады мдф</div>
+                        <div class="calc-additionally__count">
+                            <span>+0р</span>
+                            <select class="calc-additionally__choice" name="mdf">
+                                <option value="">Без фасадов мдф</option>
+                                <option value="100">фасад мдф 1</option>
+                                <option value="100">фасад мдф 2</option>
+                                <option value="100">фасад мдф 3</option>
+                            </select>
+                            <!-- <button class="calc-additionally__btn calc-additionally__btn_plus">+</button>
+                            <button class="calc-additionally__btn calc-additionally__btn_minus ">-</button> -->
                         </div>
-                        <div data-dop-price="100" class="calc-additionally__item">
-                            <div class="calc-additionally__title title_subtitle">Мойка</div>
-                            <div class="calc-additionally__count">
-                                <span>0</span>
-                                <button class="calc-additionally__btn calc-additionally__btn_plus">+</button>
-                                <button class="calc-additionally__btn calc-additionally__btn_minus">-</button>
-                            </div>
+                    </div>
+                    <div data-dop-price="100" class="calc-additionally__item">
+                        <div class="calc-additionally__imgs">
+                            <img src="img/calc/not-photo.jpg" alt="картинка">
                         </div>
-                        <div data-dop-price="100" class="calc-additionally__item">
-                            <div class="calc-additionally__title title_subtitle">Ручки</div>
-                            <div class="calc-additionally__count">
-                                <span>0</span>
-                                <button class="calc-additionally__btn calc-additionally__btn_plus">+</button>
-                                <button class="calc-additionally__btn calc-additionally__btn_minus">-</button>
-                            </div>
+                        <div class="calc-additionally__title title_subtitle">Фартук</div>
+                        <div class="calc-additionally__count">
+                            <span>+0р</span>
+                            <select class="calc-additionally__choice" name="mdf">
+                                <option value="">Без фартука</option>
+                                <option value="100">Фартук 1</option>
+                                <option value="100">Фартук 2</option>
+                                <option value="100">Фартук 3</option>
+                            </select>
+                            <!-- <button class="calc-additionally__btn calc-additionally__btn_plus">+</button>
+                            <button class="calc-additionally__btn calc-additionally__btn_minus ">-</button> -->
                         </div>
-                        <div data-dop-price="100" class="calc-additionally__item">
-                            <div class="calc-additionally__title title_subtitle">Столешница</div>
-                            <div class="calc-additionally__count">
-                                <span>0</span>
-                                <button class="calc-additionally__btn calc-additionally__btn_plus">+</button>
-                                <button class="calc-additionally__btn calc-additionally__btn_minus">-</button>
-                            </div>
+                    </div>
+                    <div data-dop-price="100" class="calc-additionally__item">
+                        <div class="calc-additionally__imgs">
+                            <img src="img/calc/not-photo.jpg" alt="картинка">
                         </div>
-                        <div data-dop-price="100" class="calc-additionally__item">
-                            <div class="calc-additionally__title title_subtitle">Вытяжка</div>
-                            <div class="calc-additionally__count">
-                                <span>0</span>
-                                <button class="calc-additionally__btn calc-additionally__btn_plus">+</button>
-                                <button class="calc-additionally__btn calc-additionally__btn_minus">-</button>
-                            </div>
+                        <div class="calc-additionally__title title_subtitle">Мойка</div>
+                        <div class="calc-additionally__count">
+                            <span>+0р</span>
+                            <select class="calc-additionally__choice" name="mdf">
+                                <option value="">Без мойки</option>
+                                <option value="100">Мойка 1</option>
+                                <option value="100">Мойка 2</option>
+                                <option value="100">Мойка 3</option>
+                            </select>
+                            <!-- <button class="calc-additionally__btn calc-additionally__btn_plus">+</button>
+                            <button class="calc-additionally__btn calc-additionally__btn_minus ">-</button> -->
                         </div>
-                        <div data-dop-price="100" class="calc-additionally__item">
-                            <div class="calc-additionally__title title_subtitle">Фурнитура</div>
-                            <div class="calc-additionally__count">
-                                <span>0</span>
-                                <button class="calc-additionally__btn calc-additionally__btn_plus">+</button>
-                                <button class="calc-additionally__btn calc-additionally__btn_minus">-</button>
-                            </div>
+                    </div>
+                    <div data-dop-price="100" class="calc-additionally__item">
+                        <div class="calc-additionally__imgs">
+                            <img src="img/calc/not-photo.jpg" alt="картинка">
+                        </div>
+                        <div class="calc-additionally__title title_subtitle">Ручки</div>
+                        <div class="calc-additionally__count">
+                            <span>+0р</span>
+                            <select class="calc-additionally__choice" name="mdf">
+                                <option value="">Без ручки</option>
+                                <option value="100">Ручки 1</option>
+                                <option value="100">Ручки 2</option>
+                                <option value="100">Ручки 3</option>
+                            </select>
+                            <!-- <button class="calc-additionally__btn calc-additionally__btn_plus">+</button>
+                            <button class="calc-additionally__btn calc-additionally__btn_minus ">-</button> -->
+                        </div>
+                    </div>
+                    <div data-dop-price="100" class="calc-additionally__item">
+                        <div class="calc-additionally__imgs">
+                            <img src="img/calc/not-photo.jpg" alt="картинка">
+                        </div>
+                        <div class="calc-additionally__title title_subtitle">Столешница</div>
+                        <div class="calc-additionally__count">
+                            <span>+0р</span>
+                            <select class="calc-additionally__choice" name="mdf">
+                                <option value="">Без столешница</option>
+                                <option value="100">Столешница 1</option>
+                                <option value="100">Столешница 2</option>
+                                <option value="100">Столешница 3</option>
+                            </select>
+                            <!-- <button class="calc-additionally__btn calc-additionally__btn_plus">+</button>
+                            <button class="calc-additionally__btn calc-additionally__btn_minus ">-</button> -->
+                        </div>
+                    </div>
+                    <div data-dop-price="100" class="calc-additionally__item">
+                        <div class="calc-additionally__imgs">
+                            <img src="img/calc/not-photo.jpg" alt="картинка">
+                        </div>
+                        <div class="calc-additionally__title title_subtitle">Вытяжка</div>
+                        <div class="calc-additionally__count">
+                            <span>+0р</span>
+                            <select class="calc-additionally__choice" name="mdf">
+                                <option value="">Без вытяжка</option>
+                                <option value="100">Вытяжка 1</option>
+                                <option value="100">Вытяжка 2</option>
+                                <option value="100">Вытяжка 3</option>
+                            </select>
+                            <!-- <button class="calc-additionally__btn calc-additionally__btn_plus">+</button>
+                            <button class="calc-additionally__btn calc-additionally__btn_minus ">-</button> -->
+                        </div>
+                    </div>
+                    <div data-dop-price="100" class="calc-additionally__item">
+                        <div class="calc-additionally__imgs">
+                            <img src="img/calc/not-photo.jpg" alt="картинка">
+                        </div>
+                        <div class="calc-additionally__title title_subtitle">Фурнитура</div>
+                        <div class="calc-additionally__count">
+                            <span>+0р</span>
+                            <select class="calc-additionally__choice" name="mdf">
+                                <option value="">Без фурнитуры</option>
+                                <option value="100">Фурнитура 1</option>
+                                <option value="100">Фурнитура 2</option>
+                                <option value="100">Фурнитура 3</option>
+                            </select>
+                            <!-- <button class="calc-additionally__btn calc-additionally__btn_plus">+</button>
+                            <button class="calc-additionally__btn calc-additionally__btn_minus ">-</button> -->
                         </div>
                     </div>
                 </div>
@@ -423,7 +499,7 @@
     <div class="arrow_scroll">
         <img src="icons/arrow_scroll/arrow_scroll.svg" alt="arrow_scroll">
     </div>
-
+    
     <script src="js/script.js"></script>
 </body>
 </html>

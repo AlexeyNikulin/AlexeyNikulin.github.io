@@ -1,5 +1,32 @@
 .color {
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    width: 30px;
+    height: 30px;
+    border-radius: 3px;
+    margin-right: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    &_wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        width: 60%;
+    }
     &_active {
+        transform: scale(1.15);
+    }
+    &:hover::after {
+        content: attr(data-title);
+        position: absolute; /* Абсолютное позиционирование */
+        left: -50%; top: -130%; /* Положение подсказки */
+        z-index: 1; /* Отображаем подсказку поверх других элементов */
+        background: rgba(0,0,0,0.9); /* Полупрозрачный цвет фона */
+        font-size: 12px; /* Размер текста подсказки */
+        color: white;
+        padding: 5px 10px; /* Поля */
+        border: 1px solid #333; /* Параметры рамки */
+    }
+    &:hover {
         transform: scale(1.15);
     }
 }

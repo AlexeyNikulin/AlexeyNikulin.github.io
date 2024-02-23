@@ -15,7 +15,7 @@
     }
     .header {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         min-height: 64px;
         &__logo {
@@ -27,14 +27,13 @@
         }
     
         &__menu {
-            width: 980px;
+            width: 965px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             list-style-type: none;
             padding: 0;
             margin: 0;
-            margin-left: 66px;
         }
     
         &__item {
