@@ -11,11 +11,20 @@
     font-size: 20px;
     color: #fff;
     transition: all 0.3s ease-in-out;
+    &_calc {
+        min-width: 240px;
+        height: 45px;
+        font-size: 18px;
+    }
+    &_payment {
+        width: 200px;
+        height: 40px;
+    }
     &:focus {
         outline: none;
         border: none;
-        box-shadow: 0px 0px 2px 2px var(--btn-color);
-        transform: scale(1.03);
+        // box-shadow: 0px 0px 2px 2px var(--btn-color);
+        // transform: scale(1.03);
     }
     &:hover {
         box-shadow: 0px 0px 2px 2px var(--btn-color);

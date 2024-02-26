@@ -35,7 +35,6 @@
                 <nav>
                     <ul class="header__menu">
                         <li class="header__item"><a href="#about">О нас</a></li>
-                        <!-- <li class="header__item"><a href="#our">Наши работы</a></li> -->
                         <li class="header__item"><a href="#calc">Рассчиать стоимость</a></li>
                         <li class="header__item"><a data-modal="consultaion" href="#">Консультация</a></li>
                         <li class="header__item"><a href="#contact">Контакты</a></li>
@@ -105,7 +104,6 @@
 
     <section id="about" class="about">
         <div class="container">
-            <!-- <hr> -->
             <div class="about__title title">О нас</div>
             <div class="about__descr">
                 Мы рады видеть вас на нашем сайте, здесь представлены примеры наших работ и мебель, которую мы можем изготовить, в том числе по вашим индивидуальным запросам.
@@ -228,20 +226,269 @@
     <section id="calc" class="calc">
         <div class="container">
             <div class="calc__title title">Рассчитайте стоимость вашей кухни</div>
-            <div class="calc__wrapper">
+            <div class="calc-slider">
+                <div class="calc-slider__title title_params">Выберите комплектацию</div>
+                <div class="calc-slider__wrapper">
+                    <div data-calc-title="Выберите комплектацию" class="calc-slider__item calc-slider__item_active">
+                        <div data-calc-parameter="основной" class="calc-complete">
+                            <div class="calc-complete__item calc-complete__item_active calc_active">
+                                <img src="img/calc/oven.jpeg" alt="oven">
+                                <div data-calc-parameter="текст" data-title="С духовкой" class="calc-complete__text">С духовкой</div>
+                            </div>
+                            <div class="calc-complete__item">
+                                <img src="img/calc/dishwasher.jpg" alt="dishwasher">
+                                <div data-calc-parameter="текст" data-title="С посудомойкой" class="calc-complete__text">С посудомойкой</div>
+                            </div>
+                            <div class="calc-complete__item">
+                                <img src="img/calc/oven_dishwasher.jpg" alt="oven + dishwasher">
+                                <div data-calc-parameter="текст" data-title="С духовкой + посудомойкой" class="calc-complete__text">С духовкой + посудомойкой</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-calc-title="Выберите цвет" class="calc-slider__item">
+                        <div class="calc-color">
+                            <div data-calc-parameter="основной" class="calc-color__block1">
+                                <div class="calc-color__params title_params">Цвет столешницы</div>
+                                <div data-color="table" class="color_wrapper calc-color__colors">
+                                    <div data-calc-parameter="текст" data-title="Красный" class="red color calc-color__color"></div>
+                                    <div data-calc-parameter="текст" data-title="Зеленый" class="green color calc-color__color"></div>
+                                    <div data-calc-parameter="текст" data-title="Желый" class="yellow color calc-color__color"></div>
+                                    <div data-calc-parameter="текст" data-title="Серый" class="gray color calc-color__color"></div>
+                                </div>
+                            </div>
+                            <div data-calc-parameter="основной" class="calc-color__block2">
+                                <div class="calc-color__params title_params">Цвет фасадов</div>
+                                <div data-color="facade" class="color_wrapper calc-color__colors">
+                                    <div data-title="Красный" class="red color calc-color__color"></div>
+                                    <div data-title="Зеленый" class="green color calc-color__color"></div>
+                                    <div data-title="Желый" class="yellow color calc-color__color"></div>
+                                    <div data-title="Серый" class="gray color calc-color__color"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-calc-title="Выберите фасады" class="calc-slider__item">
+                        <div data-dop-title="фасад" data-calc-parameter="dop" class="calc-additionally">
+                            <div  class="calc-additionally__item">
+                                <img src="img/calc/oven.jpeg" alt="oven">
+                                <div class="calc-additionally__title">Фасад мдф 1</div>
+                                <div class="calc-additionally__count" data-price="100">+0р</div>
+                            </div>
+                            <div  class="calc-additionally__item">
+                                <img src="img/calc/dishwasher.jpg" alt="dishwasher">
+                                <div class="calc-additionally__title">Фасад мдф 2</div>
+                                <div class="calc-additionally__count" data-price="100">+100р</div>
+                            </div>
+                            <div  class="calc-additionally__item">
+                                <img src="img/calc/oven_dishwasher.jpg" alt="oven + dishwasher">
+                                <div class="calc-additionally__title">Фасад мдф 3</div>
+                                <div class="calc-additionally__count" data-price="100">+100р</div>
+                            </div>
+                        </div>
+                        <!-- <div class="calc-additionally__imgs">
+                            <img src="img/calc/not-photo.jpg" alt="картинка">
+                        </div> -->
+                        <!-- <div class="calc-additionally__title title_subtitle">Фасады мдф</div>
+                        <div class="calc-additionally__count" data-price="100">
+                            <span>+0р</span>
+                            <select class="calc-additionally__choice" name="mdf">
+                                <option value="">Без фасадов мдф</option>
+                                <option value="100">фасад мдф 1</option>
+                                <option value="100">фасад мдф 2</option>
+                                <option value="100">фасад мдф 3</option>
+                            </select>
+                        </div> -->
+                    </div>
+                    <div data-calc-title="Выберите фартук" class="calc-slider__item">
+                        <div data-dop-title="фартук" data-calc-parameter="dop" class="calc-additionally">
+                            <div  class="calc-additionally__item">
+                                <img src="img/calc/oven.jpeg" alt="oven">
+                                <div class="calc-additionally__title">Фартук 1</div>
+                                <div class="calc-additionally__count" data-price="100">+100р</div>
+                            </div>
+                            <div  class="calc-additionally__item">
+                                <img src="img/calc/dishwasher.jpg" alt="dishwasher">
+                                <div class="calc-additionally__title">Фартук 2</div>
+                                <div class="calc-additionally__count" data-price="100">+100р</div>
+                            </div>
+                            <div  class="calc-additionally__item">
+                                <img src="img/calc/oven_dishwasher.jpg" alt="oven + dishwasher">
+                                <div class="calc-additionally__title">Фартук 3</div>
+                                <div class="calc-additionally__count" data-price="100">+100р</div>
+                            </div>
+                        </div>
+                        <!-- <div class="calc-additionally__imgs">
+                            <img src="img/calc/not-photo.jpg" alt="картинка">
+                        </div>
+                        <div class="calc-additionally__title title_subtitle">Фартук</div>
+                        <div class="calc-additionally__count" data-price="100">
+                            <span>+0р</span>
+                            <select class="calc-additionally__choice" name="mdf">
+                                <option value="">Без фартука</option>
+                                <option value="100">Фартук 1</option>
+                                <option value="100">Фартук 2</option>
+                                <option value="100">Фартук 3</option>
+                            </select>
+                        </div> -->
+                    </div>
+                    <div data-calc-title="Выберите мойку"  class="calc-slider__item">
+                        <div data-dop-title="мойка" data-calc-parameter="dop" class="calc-additionally">
+                            <div  class="calc-additionally__item">
+                                <img src="img/calc/oven.jpeg" alt="oven">
+                                <div class="calc-additionally__title">Мойка 1</div>
+                                <div class="calc-additionally__count" data-price="100">+100р</div>
+                            </div>
+                            <div  class="calc-additionally__item">
+                                <img src="img/calc/dishwasher.jpg" alt="dishwasher">
+                                <div class="calc-additionally__title">Мойка 2</div>
+                                <div class="calc-additionally__count" data-price="100">+100р</div>
+                            </div>
+                            <div  class="calc-additionally__item">
+                                <img src="img/calc/oven_dishwasher.jpg" alt="oven + dishwasher">
+                                <div class="calc-additionally__title">Мойка 3</div>
+                                <div class="calc-additionally__count" data-price="100">+100р</div>
+                            </div>
+                        </div>
+                        <!-- <div class="calc-additionally__imgs">
+                            <img src="img/calc/not-photo.jpg" alt="картинка">
+                        </div>
+                        <div class="calc-additionally__title title_subtitle">Мойка</div>
+                        <div class="calc-additionally__count" data-price="100">
+                            <span>+0р</span>
+                            <select class="calc-additionally__choice" name="mdf">
+                                <option value="">Без мойки</option>
+                                <option value="100">Мойка 1</option>
+                                <option value="100">Мойка 2</option>
+                                <option value="100">Мойка 3</option>
+                            </select>
+                        </div> -->
+                    </div>
+                    <div data-calc-title="Выберите ручки" class="calc-slider__item">
+                        <div data-dop-title="ручки" data-calc-parameter="dop" class="calc-additionally">
+                            <div  class="calc-additionally__item">
+                                <img src="img/calc/oven.jpeg" alt="oven">
+                                <div class="calc-additionally__title">Ручки 1</div>
+                                <div class="calc-additionally__count" data-price="100">+100р</div>
+                            </div>
+                            <div  class="calc-additionally__item">
+                                <img src="img/calc/dishwasher.jpg" alt="dishwasher">
+                                <div class="calc-additionally__title">Ручки 2</div>
+                                <div class="calc-additionally__count" data-price="100">+100р</div>
+                            </div>
+                            <div  class="calc-additionally__item">
+                                <img src="img/calc/oven_dishwasher.jpg" alt="oven + dishwasher">
+                                <div class="calc-additionally__title">Ручки 3</div>
+                                <div class="calc-additionally__count" data-price="100">+100р</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-calc-title="Выберите столешницу" class="calc-slider__item">
+                        <div data-dop-title="столешница" data-calc-parameter="dop" class="calc-additionally">
+                            <div  class="calc-additionally__item">
+                                <img src="img/calc/oven.jpeg" alt="oven">
+                                <div class="calc-additionally__title">Столешница 1</div>
+                                <div class="calc-additionally__count" data-price="100">+100р</div>
+                            </div>
+                            <div  class="calc-additionally__item">
+                                <img src="img/calc/dishwasher.jpg" alt="dishwasher">
+                                <div class="calc-additionally__title">Столешница 2</div>
+                                <div class="calc-additionally__count" data-price="100">+100р</div>
+                            </div>
+                            <div  class="calc-additionally__item">
+                                <img src="img/calc/oven_dishwasher.jpg" alt="oven + dishwasher">
+                                <div class="calc-additionally__title">Столешница 3</div>
+                                <div class="calc-additionally__count" data-price="100">+100р</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-calc-title="Выберите вытяжку" class="calc-slider__item">
+                        <div data-dop-title="вытяжка" data-calc-parameter="dop" class="calc-additionally">
+                            <div class="calc-additionally__item">
+                                <img src="img/calc/oven.jpeg" alt="oven">
+                                <div class="calc-additionally__title">Вытяжка 1</div>
+                                <div class="calc-additionally__count" data-price="100">+100р</div>
+                            </div>
+                            <div class="calc-additionally__item">
+                                <img src="img/calc/dishwasher.jpg" alt="dishwasher">
+                                <div class="calc-additionally__title">Вытяжка 2</div>
+                                <div class="calc-additionally__count" data-price="100">+100р</div>
+                            </div>
+                            <div class="calc-additionally__item">
+                                <img src="img/calc/oven_dishwasher.jpg" alt="oven + dishwasher">
+                                <div class="calc-additionally__title">Вытяжка 3</div>
+                                <div class="calc-additionally__count" data-price="100">+100р</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-calc-title="Выберите фурнитуру" class="calc-slider__item">
+                        <div data-dop-title="фурнитура" data-calc-parameter="dop" class="calc-additionally">
+                            <div class="calc-additionally__item">
+                                <img src="img/calc/oven.jpeg" alt="oven">
+                                <div class="calc-additionally__title">Фурнитура 1</div>
+                                <div class="calc-additionally__count" data-price="100" data-price="100">+100р</div>
+                            </div>
+                            <div  class="calc-additionally__item">
+                                <img src="img/calc/dishwasher.jpg" alt="dishwasher">
+                                <div class="calc-additionally__title">Фурнитура 2</div>
+                                <div class="calc-additionally__count" data-price="100">+100р</div>
+                            </div>
+                            <div  class="calc-additionally__item">
+                                <img src="img/calc/oven_dishwasher.jpg" alt="oven + dishwasher">
+                                <div class="calc-additionally__title">Фурнитура 3</div>
+                                <div class="calc-additionally__count" data-price="100">+100р</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-calc-title="Итого" class="calc-slider__item">
+                        <div class="calc-payment__parameters">
+                            <!-- <div class="calc-payment__item title_subtitle">Фасад мдф: <span>Фасад мдф 1</span></div>
+                            <div class="calc-payment__item title_subtitle">Фартук: <span>Фартук 1</span></div>
+                            <div class="calc-payment__item title_subtitle">Мойка: <span>Мойка 1</span></div>
+                            <div class="calc-payment__item title_subtitle">Комплектация: <span>С духовкой</span></div>
+                            <div class="calc-payment__item title_subtitle">Комплектация: <span>С духовкой</span></div>
+                            <div class="calc-payment__item title_subtitle">Комплектация: <span>С духовкой</span></div>
+                            <div class="calc-payment__item title_subtitle">Комплектация: <span>С духовкой</span></div> -->
+                            <div class="calc-payment__basic">
+                                <div class="calc-payment__item calc-payment__complete title_subtitle">Комплектация: <span>С духовкой</span></div>
+                                <div data-input-color="color-table" class="calc-payment__item calc-payment__color title_subtitle">Цвет столешницы:   <span>Выберите цвет</span></div>
+                                <div data-input-color="color-facade" class="calc-payment__item calc-payment__color title_subtitle">Цвет фасадов: <span>Выберите цвет</span></div>
+                            </div>
+                            <div class="calc-payment__dop">
+                                <div class="title_subtitle calc-payment__item calc-payment__dop_wrapper">
+                                    <div>Элементы кухни:</div> 
+                                    <ul>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="calc-payment">
+                            <div class="title title_payment calc-payment__title">Стоимость вашей кухни составила - <span>50000</span>р</div>
+                            <button class="btn btn_calc calc-payment__btn">Оплатить заказ</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="calc-slider__btns">
+                    <button class="btn btn_calc calc-slider__prev">Предыдущий шаг</button>
+                    <button class="btn btn_calc calc-slider__again">Рассчитать заново</button>
+                    <button class="btn btn_calc calc-slider__next">Следующий шаг</button>
+                </div>
+            </div>
+            
+            <!-- <div class="calc__wrapper">
                 <div class="calc__count">
                     <div class="calc-complete">
                         <div class="calc-complete__params title_params">Выберите комплектацию</div>
                         <div class="calc-complete__wrapper">
-                            <div data-type-slide="oven" class="calc-complete__item calc-complete__item_active">
+                            <div  class="calc-complete__item calc-complete__item_active">
                                 <img src="img/calc/oven.jpeg" alt="oven">
                                 <div class="calc-complete__text">С духовкой</div>
                             </div>
-                            <div data-type-slide="dishwasher" class="calc-complete__item">
+                            <div  class="calc-complete__item">
                                 <img src="img/calc/dishwasher.jpg" alt="dishwasher">
                                 <div class="calc-complete__text">С посудомойкой</div>
                             </div>
-                            <div data-type-slide="oven_dishwasher" class="calc-complete__item">
+                            <div  class="calc-complete__item">
                                 <img src="img/calc/oven_dishwasher.jpg" alt="oven + dishwasher">
                                 <div class="calc-complete__text">С духовкой +<br> посудомойкой</div>
                             </div>
@@ -257,11 +504,6 @@
                             <div data-title="желый" class="yellow color calc-color__color"></div>
                             <div data-title="серый" class="gray color calc-color__color"></div>
                         </div>
-                        
-                        <!-- <div class="calc-color__input">
-                            <input name="color-table" type="text" required placeholder="Бирюзовый">
-                            <span class="bar"></span>
-                        </div> -->
                     </div>
                     <div class="calc-color__block2">
                         <div class="calc-color__params title_params">Цвет фасадов</div>
@@ -271,10 +513,6 @@
                             <div data-title="желый" class="yellow color calc-color__color"></div>
                             <div data-title="серый" class="gray color calc-color__color"></div>
                         </div>
-                        <!-- <div class="calc-color__input">
-                            <input name="color-facade" type="text" required placeholder="Серебристый">
-                            <span class="bar"></span>
-                        </div> -->
                     </div>
                 </div>
             </div>
@@ -286,7 +524,7 @@
                             <img src="img/calc/not-photo.jpg" alt="картинка">
                         </div>
                         <div class="calc-additionally__title title_subtitle">Фасады мдф</div>
-                        <div class="calc-additionally__count">
+                        <div class="calc-additionally__count" data-price="100">
                             <span>+0р</span>
                             <select class="calc-additionally__choice" name="mdf">
                                 <option value="">Без фасадов мдф</option>
@@ -294,8 +532,6 @@
                                 <option value="100">фасад мдф 2</option>
                                 <option value="100">фасад мдф 3</option>
                             </select>
-                            <!-- <button class="calc-additionally__btn calc-additionally__btn_plus">+</button>
-                            <button class="calc-additionally__btn calc-additionally__btn_minus ">-</button> -->
                         </div>
                     </div>
                     <div data-dop-price="100" class="calc-additionally__item">
@@ -303,7 +539,7 @@
                             <img src="img/calc/not-photo.jpg" alt="картинка">
                         </div>
                         <div class="calc-additionally__title title_subtitle">Фартук</div>
-                        <div class="calc-additionally__count">
+                        <div class="calc-additionally__count" data-price="100">
                             <span>+0р</span>
                             <select class="calc-additionally__choice" name="mdf">
                                 <option value="">Без фартука</option>
@@ -311,8 +547,6 @@
                                 <option value="100">Фартук 2</option>
                                 <option value="100">Фартук 3</option>
                             </select>
-                            <!-- <button class="calc-additionally__btn calc-additionally__btn_plus">+</button>
-                            <button class="calc-additionally__btn calc-additionally__btn_minus ">-</button> -->
                         </div>
                     </div>
                     <div data-dop-price="100" class="calc-additionally__item">
@@ -320,7 +554,7 @@
                             <img src="img/calc/not-photo.jpg" alt="картинка">
                         </div>
                         <div class="calc-additionally__title title_subtitle">Мойка</div>
-                        <div class="calc-additionally__count">
+                        <div class="calc-additionally__count" data-price="100">
                             <span>+0р</span>
                             <select class="calc-additionally__choice" name="mdf">
                                 <option value="">Без мойки</option>
@@ -328,8 +562,6 @@
                                 <option value="100">Мойка 2</option>
                                 <option value="100">Мойка 3</option>
                             </select>
-                            <!-- <button class="calc-additionally__btn calc-additionally__btn_plus">+</button>
-                            <button class="calc-additionally__btn calc-additionally__btn_minus ">-</button> -->
                         </div>
                     </div>
                     <div data-dop-price="100" class="calc-additionally__item">
@@ -337,7 +569,7 @@
                             <img src="img/calc/not-photo.jpg" alt="картинка">
                         </div>
                         <div class="calc-additionally__title title_subtitle">Ручки</div>
-                        <div class="calc-additionally__count">
+                        <div class="calc-additionally__count" data-price="100">
                             <span>+0р</span>
                             <select class="calc-additionally__choice" name="mdf">
                                 <option value="">Без ручки</option>
@@ -345,8 +577,6 @@
                                 <option value="100">Ручки 2</option>
                                 <option value="100">Ручки 3</option>
                             </select>
-                            <!-- <button class="calc-additionally__btn calc-additionally__btn_plus">+</button>
-                            <button class="calc-additionally__btn calc-additionally__btn_minus ">-</button> -->
                         </div>
                     </div>
                     <div data-dop-price="100" class="calc-additionally__item">
@@ -354,7 +584,7 @@
                             <img src="img/calc/not-photo.jpg" alt="картинка">
                         </div>
                         <div class="calc-additionally__title title_subtitle">Столешница</div>
-                        <div class="calc-additionally__count">
+                        <div class="calc-additionally__count" data-price="100">
                             <span>+0р</span>
                             <select class="calc-additionally__choice" name="mdf">
                                 <option value="">Без столешница</option>
@@ -362,8 +592,6 @@
                                 <option value="100">Столешница 2</option>
                                 <option value="100">Столешница 3</option>
                             </select>
-                            <!-- <button class="calc-additionally__btn calc-additionally__btn_plus">+</button>
-                            <button class="calc-additionally__btn calc-additionally__btn_minus ">-</button> -->
                         </div>
                     </div>
                     <div data-dop-price="100" class="calc-additionally__item">
@@ -371,7 +599,7 @@
                             <img src="img/calc/not-photo.jpg" alt="картинка">
                         </div>
                         <div class="calc-additionally__title title_subtitle">Вытяжка</div>
-                        <div class="calc-additionally__count">
+                        <div class="calc-additionally__count" data-price="100">
                             <span>+0р</span>
                             <select class="calc-additionally__choice" name="mdf">
                                 <option value="">Без вытяжка</option>
@@ -379,8 +607,6 @@
                                 <option value="100">Вытяжка 2</option>
                                 <option value="100">Вытяжка 3</option>
                             </select>
-                            <!-- <button class="calc-additionally__btn calc-additionally__btn_plus">+</button>
-                            <button class="calc-additionally__btn calc-additionally__btn_minus ">-</button> -->
                         </div>
                     </div>
                     <div data-dop-price="100" class="calc-additionally__item">
@@ -388,7 +614,7 @@
                             <img src="img/calc/not-photo.jpg" alt="картинка">
                         </div>
                         <div class="calc-additionally__title title_subtitle">Фурнитура</div>
-                        <div class="calc-additionally__count">
+                        <div class="calc-additionally__count" data-price="100">
                             <span>+0р</span>
                             <select class="calc-additionally__choice" name="mdf">
                                 <option value="">Без фурнитуры</option>
@@ -396,8 +622,6 @@
                                 <option value="100">Фурнитура 2</option>
                                 <option value="100">Фурнитура 3</option>
                             </select>
-                            <!-- <button class="calc-additionally__btn calc-additionally__btn_plus">+</button>
-                            <button class="calc-additionally__btn calc-additionally__btn_minus ">-</button> -->
                         </div>
                     </div>
                 </div>
@@ -413,7 +637,7 @@
                     <div class="calc-payment__price title_subtitle">Итого: <span>50000</span><span>р</span></div>
                     <button class="btn calc-payment__btn">Оплатить заказ</button>
                 </div>
-            </div>
+            </div> -->
         </div>
     </section>
 
@@ -464,7 +688,6 @@
                 <nav>
                     <ul class="footer__menu">
                         <li class="footer__item"><a href="#about">О нас</a></li>
-                        <li class="footer__item"><a href="#our">Наши работы</a></li>
                         <li class="footer__item"><a href="#calc">Калькулятор</a></li>
                         <li class="footer__item"><a data-modal="consultaion" href="#">Консультация</a></li>
                         <li class="footer__item"><a href="#contact">Контакты</a></li>

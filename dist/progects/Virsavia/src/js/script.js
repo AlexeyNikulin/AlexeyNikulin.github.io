@@ -2,67 +2,222 @@ window.addEventListener('DOMContentLoaded', () => {
     // Calculation
 
     const calc = () => {
-        const slides = document.querySelectorAll('.calc-complete__item'),
-            complete = document.querySelector('.calc-payment__complete span'),
-            inputsColor = document.querySelectorAll('.calc-color input'),
-            dopItems = document.querySelectorAll('.calc-additionally__item'),
-            finishPriceText = document.querySelectorAll('.calc-payment__price span')[0],
-            dopPriceText = document.querySelectorAll('.calc-payment__additionally span')[0];
-            
-        let typeSlide = 'oven',
-            dopPrice = 0,
-            finishPrice = 50000;
+        const slides = document.querySelectorAll('.calc-slider__item'),
+              btnNext = document.querySelector('.calc-slider__next'),
+              btnPrev = document.querySelector('.calc-slider__prev'),
+              btnAgain = document.querySelector('.calc-slider__again'),
+              calcTitle = document.querySelector('.calc-slider__title'),
+              completeSlides = document.querySelectorAll('.calc-complete__item'),
+              colorTabelText = document.querySelector('[data-input-color="color-table"] span'),
+              colorFacadeText = document.querySelector('[data-input-color="color-facade"] span'),
+              colorTabelWrapper = document.querySelector('[data-color="table"]'),
+              colorFasadeWrapper = document.querySelector('[data-color="facade"]'),
+              colorTabelSlides = colorTabelWrapper.querySelectorAll('.calc-color__color'),
+              colorFacadeSlides = colorFasadeWrapper.querySelectorAll('.calc-color__color'),
+              dopSlides = document.querySelectorAll('[data-calc-parameter="dop"]'),
+              dopWrapper = document.querySelector('.calc-payment__dop_wrapper ul'),
+              finalPrice = document.querySelector('.calc-payment__title span');
+
+        let countSlides = slides.length,
+            currentSlide = 0;
 
         slides.forEach(slide => {
+            slide.classList.remove('calc-slider__item_active');
+        });
+
+        switchSlide(slides, currentSlide, 'calc-slider__item_active');
+        hideBtn();
+
+        // Работы с дополнительными параметрами
+
+        dopSlides.forEach(slideWrapper => {
+            const slides = slideWrapper.querySelectorAll('.calc-additionally__item');
+            slides.forEach(slide => {
+                slide.addEventListener('click', (e) => {
+                    if (e.target && e.target.matches('img')) {
+                        slides.forEach(slide => {
+                            slide.classList.remove('calc-additionally__item_active');
+                        });
+
+                        slide.classList.add('calc-additionally__item_active');
+
+                        const price = +slide.querySelector('.calc-additionally__count').getAttribute('data-price');
+                        const title = slideWrapper.getAttribute('data-dop-title');
+                        const text = slide.querySelector('.calc-additionally__title').textContent.toLocaleLowerCase();
+
+                        wrapperElement = dopWrapper.querySelector(`[data-dop-id="${title}"]`);
+                        
+                        if (wrapperElement) {
+                            finalPrice.textContent = +finalPrice.textContent - +price;
+                            wrapperElement.remove();
+                        }
+
+                        const spanTitle = document.createElement('span');
+                        const spanText = document.createElement('span');
+                        const wrapper = document.createElement('li');
+                        spanTitle.textContent = title + ' - ';
+                        spanText.textContent = text + '; ';
+                        wrapper.setAttribute("data-dop-id", `${title}`);
+                        spanText.classList.add('calc-payment__text');
+                        wrapper.append(spanTitle);
+                        wrapper.append(spanText);
+                        dopWrapper.append(wrapper);
+                        finalPrice.textContent = +finalPrice.textContent + +price;
+                    }
+                });
+            });
+        });
+
+        // Работы с выбором цвета
+
+        colorTabelSlides.forEach(function(slide) {
+            slide.addEventListener('click', (e) => {
+                colorTabelSlides.forEach(slide => {
+                    slide.classList.remove('calc-color__color_active');
+                });
+                slide.classList.add('calc-color__color_active');
+                colorTabelText.textContent = slide.getAttribute('data-title');
+            });
+        });
+
+        colorFacadeSlides.forEach(function(slide) {
+            slide.addEventListener('click', (e) => {
+                colorFacadeSlides.forEach(slide => {
+                    slide.classList.remove('calc-color__color_active');
+                });
+                slide.classList.add('calc-color__color_active');
+                colorFacadeText.textContent = slide.getAttribute('data-title');
+            });
+        });
+
+        // Комплектация
+
+        document.querySelector('.calc-payment__complete span').textContent = completeSlides[0].querySelector('.calc-complete__text').textContent;
+
+        completeSlides.forEach(slide => {
             slide.addEventListener('click', (e) => {
                 if (e.target && e.target.matches("img") && !slide.classList.contains('calc-complete__item_active')) {
-                    slides.forEach(slide => {
+                    completeSlides.forEach(slide => {
                         slide.classList.remove('calc-complete__item_active');
                     });
                     slide.classList.add('calc-complete__item_active');
-                    typeSlide = slide.getAttribute('data-type-slide');
-                    complete.textContent = slide.querySelector('.calc-complete__text').textContent;
+                    document.querySelector('.calc-payment__complete span').textContent = slide.querySelector('.calc-complete__text').textContent;
                 }
             });
         });
 
-        inputsColor.forEach(input => {
-            input.addEventListener('input', (e) => {
-                if (e.currentTarget && e.currentTarget.getAttribute('name') === 'color-table') {
-                    document.querySelector('[data-input-color="color-table"] span').textContent = e.currentTarget.value;
-                } else if (e.currentTarget && e.currentTarget.getAttribute('name') === 'color-facade') {
-                    document.querySelector('[data-input-color="color-facade"] span').textContent = e.currentTarget.value;
-                }
-            });
-        });
+        // Переключение слайдов кнопками
 
-        dopItems.forEach(item => {
-            let countElem = item.querySelector('.calc-additionally__count span'),
-                countPrice = 0,
-                basePrice = +item.getAttribute('data-dop-price');
+        btnNext.addEventListener('click', btnSwitchSlide);
+        btnPrev.addEventListener('click', btnSwitchSlide);
+        btnAgain.addEventListener('click', btnSwitchSlide);
 
-            item.querySelector('.calc-additionally__btn_plus').addEventListener('click', () => {
-                if (countPrice < 100000) {
-                    countPrice++;
-                    countElem.textContent = countPrice;
-                    dopPrice += basePrice;
-                    dopPriceText.textContent = dopPrice;
-                    finishPrice += basePrice;
-                    finishPriceText.textContent = finishPrice;
-                }
-            });
+        // Функции
 
-            item.querySelector('.calc-additionally__btn_minus').addEventListener('click', () => {
-                if (countPrice > 0) {
-                    countPrice--;
-                    countElem.textContent = countPrice;
-                    dopPrice -= basePrice;
-                    dopPriceText.textContent = dopPrice;
-                    finishPrice -= basePrice;
-                    finishPriceText.textContent = finishPrice;
+        function changeTitleText(title, attributeSelector, idxSlide, slides) {
+            title.textContent = slides[idxSlide].getAttribute(attributeSelector);
+        }
+
+        function btnSwitchSlide(e) {
+            const btn = e.target;
+            if (btn && btn.classList.contains('calc-slider__next')) {
+                if (currentSlide < countSlides - 1) {
+                    currentSlide++;
+                    switchSlide(slides, currentSlide, 'calc-slider__item_active');
+                    changeTitleText(calcTitle, 'data-calc-title', currentSlide, slides);
                 }
+            } else if (btn && btn.classList.contains('calc-slider__prev')) {
+                if (currentSlide > 0) {
+                    currentSlide--;
+                    switchSlide(slides, currentSlide, 'calc-slider__item_active');
+                    changeTitleText(calcTitle, 'data-calc-title', currentSlide, slides);
+                }
+            } else if (btn && btn.classList.contains('calc-slider__again')) {
+                currentSlide = 0;
+                switchSlide(slides, currentSlide, 'calc-slider__item_active');
+                changeTitleText(calcTitle, 'data-calc-title', currentSlide, slides);
+            }
+
+            hideBtn();
+        }
+
+        function switchSlide(slides, idxSlide, selector) {
+            slides.forEach(item => {
+                item.classList.remove('calc-slider__item_active');
             });
-        });
+            slides[idxSlide].classList.add(selector);
+        }
+
+        function hideBtn() {
+            if (currentSlide == 0) {
+                btnPrev.style.display = "none";
+            } else {
+                btnPrev.style.display = "block";
+            }
+
+            if (currentSlide === countSlides - 1) {
+                btnNext.style.display = "none";
+                btnAgain.style.display = "block";
+            } else {
+                btnNext.style.display = "block";
+                btnAgain.style.display = "none";
+            }
+        }
+            
+        // let typeSlide = 'oven',
+        //     dopPrice = 0,
+        //     finishPrice = 50000;
+
+        // slides.forEach(slide => {
+            // slide.addEventListener('click', (e) => {
+            //     if (e.target && e.target.matches("img") && !slide.classList.contains('calc-complete__item_active')) {
+            //         slides.forEach(slide => {
+            //             slide.classList.remove('calc-complete__item_active');
+            //         });
+            //         slide.classList.add('calc-complete__item_active');
+            //         typeSlide = slide.getAttribute('data-type-slide');
+            //         complete.textContent = slide.querySelector('.calc-complete__text').textContent;
+            //     }
+            // });
+        // });
+
+        // inputsColor.forEach(input => {
+        //     input.addEventListener('input', (e) => {
+        //         if (e.currentTarget && e.currentTarget.getAttribute('name') === 'color-table') {
+        //             document.querySelector('[data-input-color="color-table"] span').textContent = e.currentTarget.value;
+        //         } else if (e.currentTarget && e.currentTarget.getAttribute('name') === 'color-facade') {
+        //             document.querySelector('[data-input-color="color-facade"] span').textContent = e.currentTarget.value;
+        //         }
+        //     });
+        // });
+
+        // dopItems.forEach(item => {
+        //     let countElem = item.querySelector('.calc-additionally__count span'),
+        //         countPrice = 0,
+        //         basePrice = +item.getAttribute('data-dop-price');
+
+        //     item.querySelector('.calc-additionally__btn_plus').addEventListener('click', () => {
+        //         if (countPrice < 100000) {
+        //             countPrice++;
+        //             countElem.textContent = countPrice;
+        //             dopPrice += basePrice;
+        //             dopPriceText.textContent = dopPrice;
+        //             finishPrice += basePrice;
+        //             finishPriceText.textContent = finishPrice;
+        //         }
+        //     });
+
+        //     item.querySelector('.calc-additionally__btn_minus').addEventListener('click', () => {
+        //         if (countPrice > 0) {
+        //             countPrice--;
+        //             countElem.textContent = countPrice;
+        //             dopPrice -= basePrice;
+        //             dopPriceText.textContent = dopPrice;
+        //             finishPrice -= basePrice;
+        //             finishPriceText.textContent = finishPrice;
+        //         }
+        //     });
+        // });
     }
 
     // Modal
@@ -248,7 +403,7 @@ window.addEventListener('DOMContentLoaded', () => {
     modal();
     smoothScrolling();
     maskPhone();
-    slider('.slider_materials');
-    slider('.slider_furniture');
-    tabs();
+    // slider('.slider_materials');
+    // slider('.slider_furniture');
+    // tabs();
 });
