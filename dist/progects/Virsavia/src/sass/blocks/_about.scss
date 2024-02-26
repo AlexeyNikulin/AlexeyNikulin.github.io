@@ -16,4 +16,18 @@
         color: #000;
         margin-top: 30px;
     }
+
+    &__more {
+        display: none;
+        border-bottom: 1px solid #937a60;
+        width: 178px;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 30px;
+        font-weight: 400;
+        font-size: 19px;
+        line-height: 147%;
+        color: var(--main-color);
+        cursor: pointer;
+    }
 }

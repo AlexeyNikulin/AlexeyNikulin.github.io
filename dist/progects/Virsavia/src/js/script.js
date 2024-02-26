@@ -399,6 +399,23 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const toggleAboutText = () => {
+        const textElement = document.querySelector('.about__descr'),
+              moreBtn = document.querySelector('.about__more'),
+              display = window.getComputedStyle(moreBtn).getPropertyValue('display');
+
+        if (display === "block") {
+            let text = textElement.textContent;
+            if (text.length > 180) {
+                textElement.textContent = text.slice(0, 180) + '...';
+                moreBtn.addEventListener('click', () => {
+                    textElement.textContent = text;
+                    moreBtn.style.display = 'none';
+                });
+            }
+        }
+    }
+
     const menu = () => {
         const hamburger = document.querySelector('.hamburger'),
               close = document.querySelector('.close'),
@@ -421,6 +438,7 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     menu();
+    toggleAboutText();
     // calc();
     // modal();
     // smoothScrolling();
