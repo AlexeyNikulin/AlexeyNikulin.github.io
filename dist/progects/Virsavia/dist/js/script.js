@@ -421,10 +421,10 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     menu();
-    calc();
-    modal();
-    smoothScrolling();
-    maskPhone();
+    // calc();
+    // modal();
+    // smoothScrolling();
+    // maskPhone();
     // slider('.slider_materials');
     // slider('.slider_furniture');
     // tabs();
