@@ -29,25 +29,39 @@
 <body>
 
     <section class="promo">
-        <div class="container">
-            <div class="header">
-                <div class="header__logo">Вирсавия</div>
-                <nav>
-                    <ul class="header__menu">
-                        <li class="header__item"><a href="#about">О нас</a></li>
-                        <li class="header__item"><a href="#calc">Рассчиать стоимость</a></li>
-                        <li class="header__item"><a data-modal="consultaion" href="#">Консультация</a></li>
-                        <li class="header__item"><a href="#contact">Контакты</a></li>
-                        <li class="header__item"><a href="tel:89048610213">+79048610213<br>Пн-Вс 9:00-21:00</a></li>
-                    </ul>
-                </nav>
+        <div class="header">
+            <div class="container">
+                <div class="header__wrapper">
+                    <div class="header__logo">Вирсавия</div>
+                    <nav>
+                        <ul class="header__menu">
+                            <li class="header__item"><a href="#about">О нас</a></li>
+                            <li class="header__item"><a href="#calc">Рассчитать стоимость</a></li>
+                            <li class="header__item"><a data-modal="consultaion" href="#">Консультация</a></li>
+                            <li class="header__item"><a href="#contact">Контакты</a></li>
+                            <li class="header__item"><a href="tel:89048610213">+79048610213<br>Пн-Вс 9:00-21:00</a></li>
+                        </ul>
+                        <div class="close header__close">
+                            <div>
+                                <div class="leftright"></div>
+                                <div class="rightleft"></div>
+                            </div>
+                        </div>
+                    </nav>
+                    <div class="hamburger header__hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
             </div>
-
+        </div>
+        <div class="container">
             <h1 class="promo__title">Мебель на заказ</h1>
-            <h2 class="promo__subtitle">Изготавливаем и доставляем мебель<br>по всему Сыктывкару!
+            <h2 class="promo__subtitle">Изготавливаем и доставляем мебель<br>по всему Сыктывкару!</h2>
             <div class="promo__btns">
-                <button data-modal="consultaion" class="promo__btn btn">Получить консультацию</button>
-                <button data-btn="to-calc" class="promo__btn btn">Рассчитать стоимость</button>
+                <button data-modal="consultaion" class="btn promo__btn">Получить консультацию</button>
+                <button data-btn="to-calc" class="btn promo__btn">Рассчитать стоимость</button>
             </div>
         </div>
     </section>
@@ -640,7 +654,7 @@
             </div> -->
         </div>
     </section>
-
+    <!--  -->
     <section id="contact" class="contact">
         <div class="container">
             <div class="contact__title title">Контакты</div>

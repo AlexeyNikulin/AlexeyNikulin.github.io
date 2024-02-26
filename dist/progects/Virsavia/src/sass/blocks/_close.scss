@@ -1,0 +1,30 @@
+.close {
+    display: flex;
+    justify-content: center;
+}
+.close div {
+    cursor: pointer;
+    position: relative;  
+    height: 68px;
+    width: 50px;
+}
+.close .leftright {
+    height: 4px;
+    width: 50px;
+    position: absolute;
+    margin-top: 24px;
+    background-color: white;
+    border-radius: 2px;
+    transform: rotate(45deg);
+    transition: all .3s ease-in;
+}
+.close .rightleft {
+    height: 4px;
+    width: 50px;
+    position: absolute;
+    margin-top: 24px;
+    background-color: #fff;
+    border-radius: 2px;
+    transform: rotate(-45deg);
+    transition: all .3s ease-in;
+}

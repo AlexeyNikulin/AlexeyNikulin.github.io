@@ -1,0 +1,16 @@
+.hamburger {
+    height: 27px;
+    // margin-left: 21px;
+    cursor: pointer;
+    span {
+        display: block;
+        border-radius: 26px;
+        width: 46px;
+        height: 3px;
+        background: white;
+        transition: 0.5s all;
+        &:nth-child(2) {
+            margin: 9px 0;
+        }
+    }
+}

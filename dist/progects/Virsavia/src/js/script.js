@@ -399,6 +399,28 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const menu = () => {
+        const hamburger = document.querySelector('.hamburger'),
+              close = document.querySelector('.close'),
+              menu = document.querySelector('.header nav'),
+              menuItems = document.querySelectorAll('.header__item');
+
+        hamburger.addEventListener('click', () => {
+            menu.classList.add('active');
+        });
+
+        close.addEventListener('click', () => {
+            menu.classList.remove('active');
+        });
+
+        menuItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                menu.classList.remove('active');
+            });
+        });
+    }
+
+    menu();
     calc();
     modal();
     smoothScrolling();
