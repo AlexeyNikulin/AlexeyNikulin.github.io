@@ -86,14 +86,20 @@
         &__subtitle {
             font-size: 20px;
         }
-        &__btn {
-            width: 220px;
-            height: 45px;
-            font-size: 17px;
-        }
         &:before{
             width: 67%;
         }
+    }
+    .about {
+        &__title {
+            margin-top: 50px;
+        }
+        &__descr {
+            font-size: 22px;
+        }
+    }
+    .title {
+        font-size: 55px;
     }
 }
 
@@ -165,6 +171,15 @@
             transform: translateY(-50%);
         }
     }
+    .about {
+        &__descr {
+            font-size: 20px;
+            line-height: 35px;
+        }
+    }
+    .title {
+        font-size: 45px;
+    }
 }
 
 @media (max-width: 575px) {
@@ -227,5 +242,8 @@
                 margin-top: 20px;
             }
         }
+    }
+    .title {
+        font-size: 39px;
     }
 }
