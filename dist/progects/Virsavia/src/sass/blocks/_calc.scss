@@ -13,8 +13,11 @@
     }
 
     &-complete {
-        display: flex;
-
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 220px);
+        grid-row: 160px;
+        column-gap: 40px;
+        row-gap: 40px;
         &__params {
             font-weight: 400;
             font-size: 26px;
@@ -23,9 +26,8 @@
     
         &__item {
             text-align: center;
-            margin: 0 30px;
             img {
-                width: 220px;
+                width: 100%;
                 height: 160px;
                 object-fit: cover;
                 cursor: pointer;
@@ -72,12 +74,10 @@
         display: grid;
         grid-template-columns: repeat( auto-fit, 220px);
         row-gap: 30px;
-
         &__item {
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 220px;
             img {
                 width: 160px;
                 height: 160px;
@@ -164,10 +164,11 @@
     }
 
     &-payment {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 40px;
-
+        &__wrapper {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
         &__parameters {
             display: flex;
             flex-wrap: wrap;
@@ -183,11 +184,6 @@
             span {
                 color: var(--btn-color);
             }
-        }
-
-
-        &__dop {
-            width: 68%;
         }
 
         &__complete {
@@ -206,16 +202,6 @@
                 list-style-type: none;
                 padding-left: 20px;
             }
-        }
-    
-        &__footer {
-        }
-    
-        &__price {
-
-        }
-    
-        &__btn {
         }
     }
 }
