@@ -20,6 +20,9 @@
         width: 200px;
         height: 40px;
     }
+    &_form {
+        margin: 0 auto;
+    }
     &:focus {
         outline: none;
         border: none;

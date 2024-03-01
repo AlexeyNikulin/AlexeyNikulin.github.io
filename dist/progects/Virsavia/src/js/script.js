@@ -226,12 +226,12 @@ window.addEventListener('DOMContentLoaded', () => {
         const btnsModal = document.querySelectorAll('[data-modal="consultaion"]'),
             btnClose = document.querySelector('.modal__close'),
             overlay = document.querySelector('.overlay'),
-            modalConsultation = overlay.querySelector('#consultation');
+            modalConsultation = overlay.querySelector('#consultation'),
+            modalThanks = overlay.querySelector('#thanks');
 
         btnsModal.forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
-
                 overlay.style.display = 'block';
                 modalConsultation.style.display = 'block';
                 document.body.style.overflow = 'hidden';
@@ -241,6 +241,7 @@ window.addEventListener('DOMContentLoaded', () => {
         btnClose.addEventListener('click', () => {
             overlay.style.display = 'none';
             modalConsultation.style.display = 'none';
+            modalThanks.style.display = 'none';
             document.body.style.overflow = 'visible';
         });
     }
@@ -435,7 +436,9 @@ window.addEventListener('DOMContentLoaded', () => {
         menuItems.forEach(item => {
             item.addEventListener('click', (e) => {
                 menu.classList.remove('active');
-                document.body.style.overflow = "visible";
+                if (item.getAttribute('data-modal') !== 'consultaion') {
+                    document.body.style.overflow = "visible";
+                }
             });
         });
     }
@@ -443,9 +446,9 @@ window.addEventListener('DOMContentLoaded', () => {
     menu();
     toggleAboutText();
     // calc();
-    // modal();
-    // smoothScrolling();
-    // maskPhone();
+    modal();
+    smoothScrolling();
+    maskPhone();
     // slider('.slider_materials');
     // slider('.slider_furniture');
     // tabs();
