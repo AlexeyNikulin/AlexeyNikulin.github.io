@@ -445,7 +445,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     menu();
     toggleAboutText();
-    // calc();
+    calc();
     modal();
     smoothScrolling();
     maskPhone();

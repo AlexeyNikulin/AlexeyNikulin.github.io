@@ -226,12 +226,12 @@ window.addEventListener('DOMContentLoaded', () => {
         const btnsModal = document.querySelectorAll('[data-modal="consultaion"]'),
             btnClose = document.querySelector('.modal__close'),
             overlay = document.querySelector('.overlay'),
-            modalConsultation = overlay.querySelector('#consultation');
+            modalConsultation = overlay.querySelector('#consultation'),
+            modalThanks = overlay.querySelector('#thanks');
 
         btnsModal.forEach(btn => {
             btn.addEventListener('click', (e) => {
                 e.preventDefault();
-
                 overlay.style.display = 'block';
                 modalConsultation.style.display = 'block';
                 document.body.style.overflow = 'hidden';
@@ -241,6 +241,7 @@ window.addEventListener('DOMContentLoaded', () => {
         btnClose.addEventListener('click', () => {
             overlay.style.display = 'none';
             modalConsultation.style.display = 'none';
+            modalThanks.style.display = 'none';
             document.body.style.overflow = 'visible';
         });
     }
@@ -399,6 +400,23 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    const toggleAboutText = () => {
+        const textElement = document.querySelector('.about__descr'),
+              moreBtn = document.querySelector('.about__more'),
+              display = window.getComputedStyle(moreBtn).getPropertyValue('display');
+
+        if (display === "block") {
+            let text = textElement.textContent;
+            if (text.length > 180) {
+                textElement.textContent = text.slice(0, 180) + '...';
+                moreBtn.addEventListener('click', () => {
+                    textElement.textContent = text;
+                    moreBtn.style.display = 'none';
+                });
+            }
+        }
+    }
+
     const menu = () => {
         const hamburger = document.querySelector('.hamburger'),
               close = document.querySelector('.close'),
@@ -407,24 +425,30 @@ window.addEventListener('DOMContentLoaded', () => {
 
         hamburger.addEventListener('click', () => {
             menu.classList.add('active');
+            document.body.style.overflow = "hidden";
         });
 
         close.addEventListener('click', () => {
             menu.classList.remove('active');
+            document.body.style.overflow = 'visible';
         });
 
         menuItems.forEach(item => {
             item.addEventListener('click', (e) => {
                 menu.classList.remove('active');
+                if (item.getAttribute('data-modal') !== 'consultaion') {
+                    document.body.style.overflow = "visible";
+                }
             });
         });
     }
 
     menu();
-    // calc();
-    // modal();
-    // smoothScrolling();
-    // maskPhone();
+    toggleAboutText();
+    calc();
+    modal();
+    smoothScrolling();
+    maskPhone();
     // slider('.slider_materials');
     // slider('.slider_furniture');
     // tabs();
