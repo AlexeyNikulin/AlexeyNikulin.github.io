@@ -3,17 +3,10 @@
 
     &__wrapper {
         position: relative;
-        display: flex;
+        display: grid;
+        grid-template-columns: 60% 40%;
+        row-gap: 70px;
         margin-top: 90px;
-    }
-
-    &__block-first {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 60%;
-        min-height: 440px;
-        padding-left: 40px;
     }
 
     &__item {
@@ -31,15 +24,6 @@
         font-size: 30px;
         color: #000;
         margin-left: 28px;
-    }
-
-    &__block-second {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 40%;
-        min-height: 440px;
-        padding-left: 40px;
     }
 
     &__arrow {
@@ -63,6 +47,24 @@
         &_5 {
             top: 380px;
             left: 42%;
+        }
+        &_6 {
+            display: none;
+        }
+        &_7 {
+            display: none;
+        }
+        &_8 {
+            display: none;
+        }
+        &_9 {
+            display: none;
+        }
+        &_10 {
+            display: none;
+        }
+        &_11 {
+            display: none;
         }
     }
 }

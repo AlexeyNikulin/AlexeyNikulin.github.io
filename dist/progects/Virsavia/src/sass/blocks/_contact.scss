@@ -19,12 +19,7 @@
         text-align: left;
     }
 
-    &__address {
-        margin-bottom: 50px;
-    }
-
     &__phone {
-        margin-bottom: 50px;
         a {
             font-weight: 400;
             font-size: 30px;
@@ -33,14 +28,6 @@
             text-align: left;
             text-decoration: none;
         }
-    }
-
-    &__email {
-        margin-bottom: 50px;
-    }
-
-    &__schedule {
-        margin-bottom: 50px;
     }
 
     &__links {
@@ -70,7 +57,7 @@
         }
         input {
             border-radius: 10px;
-            width: 412px;
+            width: 100%;
             height: 56px;
             font-weight: 400;
             font-size: 26px;
@@ -88,7 +75,7 @@
         }
         textarea {
             border-radius: 10px;
-            width: 412px;
+            width: 100%;
             height: 242px;
             margin-top: 32px;
             padding: 14px 0 0 30px;
@@ -112,5 +99,9 @@
         background: var(--btn-color);
         margin: 0 auto;
         margin-top: 30px;
+    }
+
+    &_mb {
+        margin-bottom: 50px;
     }
 }

@@ -424,15 +424,18 @@ window.addEventListener('DOMContentLoaded', () => {
 
         hamburger.addEventListener('click', () => {
             menu.classList.add('active');
+            document.body.style.overflow = "hidden";
         });
 
         close.addEventListener('click', () => {
             menu.classList.remove('active');
+            document.body.style.overflow = 'visible';
         });
 
         menuItems.forEach(item => {
             item.addEventListener('click', (e) => {
                 menu.classList.remove('active');
+                document.body.style.overflow = "visible";
             });
         });
     }
