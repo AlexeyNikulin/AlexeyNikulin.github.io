@@ -48,6 +48,11 @@
             font-size: 28px;
         }
     }
+    .footer {
+        &__wrapper {
+            grid-template-columns: 1fr 230px 495px;
+        }
+    }
 }
 
 @media (max-width: 1025px) {
@@ -60,12 +65,14 @@
             transform: none;
         }
         &:active {
-            box-shadow: 0px 0px 1px 1px var(--btn-color);
-            transform: scale(1.02);
+            top: 3px;
+            // box-shadow: 0px 0px 1px 1px var(--btn-color);
+            // transform: scale(1.02);
         }
         &:target {
-            box-shadow: 0px 0px 1px 1px var(--btn-color);
-            transform: scale(1.02);
+            top: 3px;
+            // box-shadow: 0px 0px 1px 1px var(--btn-color);
+            // transform: scale(1.02);
         }
     }
 }
@@ -162,6 +169,30 @@
         &__phone {
             a {
                 font-size: 28px;
+            }
+        }
+    }
+    .footer {
+        &__wrapper {
+            grid-template-columns: 495px 200px;
+            grid-template-rows: 75px 300px;
+            column-gap: 50px;
+        }
+        nav {
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+        }
+        &__map {
+            height: 100%;
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+            iframe {
+                height: 100%;
+            }
+        }
+        &__item {
+            a {
+                line-height: 45px;
             }
         }
     }
@@ -336,6 +367,21 @@
             }
         }
     }
+    .footer {
+        &__wrapper {
+            grid-template-columns: 340px 200px;
+            grid-template-rows: 75px 200px;
+            column-gap: 30px;
+        }
+        &__logo {
+            font-size: 30px;
+        }
+        &__item {
+            a {
+                font-size: 22px;
+            }
+        }
+    }
 }
 
 @media (max-width: 575px) {
@@ -446,7 +492,7 @@
     }
     .contact {
         &-form {
-            width: 328px;
+            width: 300px;
             min-height: 526px;
             padding: 58px 24px;
             font-size: 19px;
@@ -481,4 +527,25 @@
             margin-bottom: 20px;
         }
     }
+    .footer {
+        min-height: 290px;
+        padding: 40px 0;
+        &__wrapper {
+            grid-template-columns: minmax(160px, 350px) 125px;
+            grid-template-rows: 75px 160px;
+            column-gap: 15px;
+        }
+        &__logo {
+            font-size: 26px;
+        }
+        &__item {
+            a {
+                font-size: 20px;
+            }
+        }
+    }
 }
+
+// @media (max-width: 370px) {
+
+// }
