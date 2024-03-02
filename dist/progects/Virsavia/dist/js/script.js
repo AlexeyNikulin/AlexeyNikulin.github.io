@@ -19,7 +19,7 @@ window.addEventListener('DOMContentLoaded', () => {
               finalPrice = document.querySelector('.calc-payment__title span');
 
         let countSlides = slides.length,
-            currentSlide = 0;
+            currentSlide = countSlides - 1;
 
         slides.forEach(slide => {
             slide.classList.remove('calc-slider__item_active');
@@ -250,8 +250,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
     const smoothScrolling = () => {
         const smoothLinks = document.querySelectorAll('a[href^="#"]'),
-            btnSmoothLink = document.querySelector('[data-btn="to-calc"]'),
-            arrowScrollTop = document.querySelector('.arrow_scroll');
+            btnSmoothLink = document.querySelector('[data-btn="to-calc"]');
+            // arrowScrollTop = document.querySelector('.arrow_scroll');
 
 
         for (let smoothLink of smoothLinks) {
@@ -280,20 +280,20 @@ window.addEventListener('DOMContentLoaded', () => {
 
         });
 
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 1000) {
-                arrowScrollTop.style.opacity = '1';
-            } else {
-                arrowScrollTop.style.opacity = '0';
-            }
-        });
+        // window.addEventListener('scroll', () => {
+        //     if (window.scrollY > 1000) {
+        //         arrowScrollTop.style.opacity = '1';
+        //     } else {
+        //         arrowScrollTop.style.opacity = '0';
+        //     }
+        // });
 
-        arrowScrollTop.addEventListener('click', () => {
-            window.scrollBy({
-                top: -window.scrollY,
-                behavior: 'smooth'
-            });
-        });
+        // arrowScrollTop.addEventListener('click', () => {
+        //     window.scrollBy({
+        //         top: -window.scrollY,
+        //         behavior: 'smooth'
+        //     });
+        // });
     }
 
     // Mask Phone

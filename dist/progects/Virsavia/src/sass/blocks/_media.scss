@@ -695,6 +695,8 @@
             margin-top: 20px;
         }
         &__btn {
+            font-size: 16px;
+            margin: 0 auto;
             margin-top: 20px;
         }
         &__title {
@@ -765,6 +767,9 @@
         }
         &__again, &__next {
             margin-left: 10px;
+        }
+        &__item {
+            margin-top: 20px;
         }
     }
     .calc-payment {

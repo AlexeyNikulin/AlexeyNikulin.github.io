@@ -3,7 +3,6 @@
 
     &__wrapper {
         display: flex;
-        // justify-content: space-between;
         margin-top: 50px;
     }
 
@@ -167,6 +166,7 @@
         &__wrapper {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             margin-top: 40px;
         }
         &__parameters {
@@ -202,6 +202,14 @@
                 list-style-type: none;
                 padding-left: 20px;
             }
+        }
+        &__btn {
+            border-radius: 3px;
+            line-height: 1.25;
+            background: #af9678;
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
         }
     }
 }
