@@ -19,7 +19,7 @@ window.addEventListener('DOMContentLoaded', () => {
               finalPrice = document.querySelector('.calc-payment__title span');
 
         let countSlides = slides.length,
-            currentSlide = countSlides - 1;
+            currentSlide = 0;
 
         slides.forEach(slide => {
             slide.classList.remove('calc-slider__item_active');
